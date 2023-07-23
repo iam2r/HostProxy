@@ -1,0 +1,9 @@
+*node_modules/*
+*dist/*
+*wrangler.toml
+*.wrangler/*
+
+# cf  ip 优选脚本
+**sh/better-cloudflare-ip/*
+!**sh/better-cloudflare-ip/cf.sh
+!**sh/better-cloudflare-ip/index.sh

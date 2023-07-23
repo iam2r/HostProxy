@@ -1,0 +1,31 @@
+{
+	"name": "proxy",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"postinstall": "yarn wrangler",
+		"prepare": "husky install",
+		"prettier": "prettier --ignore-unknown --write '*'",
+		"wrangler": "node wrangler.js",
+		"deploy": "wrangler publish",
+		"start": "yarn wrangler && wrangler dev --log-level info"
+	},
+	"lint-staged": {
+		"*": "yarn prettier"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^17.0.2",
+		"@commitlint/config-conventional": "^17.0.2",
+		"cross-env": "^7.0.3",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.3",
+		"prettier": "^2.6.2",
+		"wrangler": "^3.0.0"
+	},
+	"dependencies": {
+		"@cloudflare/workers-types": "^4.20230710.0",
+		"@ltd/j-toml": "^1.38.0",
+		"js-yaml": "^4.1.0",
+		"lodash": "^4.17.21"
+	}
+}
