@@ -3,7 +3,6 @@ const TOML = require('@ltd/j-toml');
 const wranglerToml = `
 name = 'hostproxy'
 main = 'src/worker.js'
-compatibility_date = '2023-06-27'
 [placement]
 mode = "smart"
 [vars]
