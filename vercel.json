@@ -1,0 +1,4 @@
+{
+    "devCommand": "yarn start",
+    "buildCommand": "yarn start"
+}

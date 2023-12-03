@@ -9,10 +9,13 @@
  */
 
 export default {
-	async fetch(request, env, ctx) {
+	async fetch(request, env) {
 		const url = new URL(request.url);
 		const hostname = url.hostname;
-		const [, targetHost] = hostname.match(/(\S+)\.(proxy\.\S+)/) || [];
+		let [, targetHost] = hostname.match(/(\S+)\.(proxy\.\S+)/) || [];
+		if(!targetHost){
+			 targetHost = (hostname.match(/^proxy\.(\S+)/) || [])[1];
+		}
 		if (targetHost) {
 			if (url.pathname.startsWith('/')) {
 				url.hostname = targetHost;
