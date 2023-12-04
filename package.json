@@ -20,7 +20,7 @@
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.3",
 		"prettier": "^2.6.2",
-		"wrangler": "^3.0.0"
+		"wrangler": "^3.18.0"
 	},
 	"dependencies": {
 		"@cloudflare/workers-types": "^4.20230710.0",
