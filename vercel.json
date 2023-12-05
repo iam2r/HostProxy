@@ -1,0 +1,22 @@
+{
+	"builds": [
+		{
+			"src": "src/express.js",
+			"use": "@vercel/node"
+		}
+	],
+	"rewrites": [
+		{
+			"source": "/:match/:url*",
+			"destination": "https://:match/:url*"
+		},
+		{
+			"source": "/:match/:url*/",
+			"destination": "https://:match/:url*/"
+		},
+		{
+			"source": "/",
+			"destination": "/src/express.js"
+		}
+	]
+}
