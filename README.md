@@ -21,11 +21,10 @@ pinned: false
 
 ## 如何动态代理
 
-部署到cf后点击触发器 添加子域名即可
+部署到 cf 后点击触发器 添加子域名即可
 例如：
-#codesandbox 开发模式版  因为未部署到cf 所以不支持优选cf的ip
+#codesandbox 开发模式版 因为未部署到 cf 所以不支持优选 cf 的 ip
 https://yv7nkp-8787.csb.app/7a57dbd5-30b2-4676-92cc-0554e5a01234
 
-#hostname后面添加.proxy.[yourhost] 就可以走该cf worker 实现 从该 worker 反向代理到原服务 
+#hostname 后面添加.proxy.[yourhost] 就可以走该 cf worker 实现 从该 worker 反向代理到原服务
 https://yv7nkp-8787.csb.app.proxy.[yourhost]/7a57dbd5-30b2-4676-92cc-0554e5a01234
-
