@@ -2,23 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const { getIp } = require('./common');
-const port = 3000;
+const port = 8788;
 const app = express();
-const proxyTarget = (process.env.PROXY_TARGET || '').split(',').filter(Boolean);
-console.log(proxyTarget);
 app.use(cors());
-proxyTarget.forEach((route) => {
-	app.use(
-		`/${route}`,
-		createProxyMiddleware({
-			target: `https://${route}`,
-			changeOrigin: true,
-			pathRewrite: {
-				[`^/${route}`]: '',
-			},
-		})
-	);
-});
 
 app.use('/', async (req, res) => {
 	const url = require('url').parse(req.url, true);
@@ -40,7 +26,19 @@ app.use('/', async (req, res) => {
 		})(req, res);
 	} else {
 		const serverIpData = await getIp();
-		res.json(serverIpData);
+		// 设置响应的 Content-Type 为 application/json
+		res.setHeader('Content-Type', 'application/json');
+		// 发送格式化后的 JSON 响应
+		res.send(
+			JSON.stringify(
+				{
+					ip: serverIpData,
+					server: 'express',
+				},
+				null,
+				2
+			)
+		);
 	}
 });
 app.listen(port, () => {

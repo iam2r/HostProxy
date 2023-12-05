@@ -17,10 +17,13 @@
 				"port": 8787
 			}
 		},
-		"build": {
-			"name": "build",
-			"command": "yarn build",
-			"runAtStart": false
+		"start:express": {
+			"name": "start:express",
+			"command": "yarn start:express",
+			"runAtStart": true,
+			"preview": {
+				"port": 8788
+			}
 		}
 	}
 }
