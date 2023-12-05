@@ -5,10 +5,8 @@ const { getIp } = require('./common');
 const port = 8788;
 const app = express();
 app.use(cors());
-
 app.use('/', async (req, res) => {
 	const url = require('url').parse(req.url, true);
-	console.log(url);
 	let [, targetHost] = url.pathname.split('/');
 
 	targetHost = targetHost || '';

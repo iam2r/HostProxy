@@ -8,7 +8,7 @@
 		"prettier": "prettier --ignore-unknown --write '*'",
 		"wrangler": "node wrangler.js",
 		"deploy": "wrangler publish",
-		"start": "yarn wrangler && wrangler dev --log-level info",
+		"start": "yarn wrangler && wrangler dev",
 		"start:express": "nodemon src/express.js"
 	},
 	"lint-staged": {
