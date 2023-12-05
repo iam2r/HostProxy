@@ -1,3 +1,5 @@
+import { getIp } from './common';
+
 const defaultTargetHost = '';
 
 export default {
@@ -25,7 +27,8 @@ export default {
 			}
 			return env.ASSETS.fetch(request);
 		} else {
-			return new Response('Not found', { status: 404 });
+			const serverIpData = await getIp();
+			return new Response(JSON.stringify(serverIpData, null, 2), { status: 200 });
 		}
 	},
 };
