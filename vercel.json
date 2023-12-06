@@ -6,17 +6,10 @@
 		}
 	],
 	"rewrites": [
-		{
-			"source": "/:match/:url*",
-			"destination": "https://:match/:url*"
-		},
-		{
-			"source": "/:match/:url*/",
-			"destination": "https://:match/:url*/"
-		},
+		{ "source": "/:target(.*)", "destination": "https://$1" },
 		{
 			"source": "/",
-			"destination": "/src/express.js"
+			"destination": "http://ip-api.com/json"
 		}
 	]
 }
