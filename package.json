@@ -9,7 +9,8 @@
 		"wrangler": "node wrangler.js",
 		"deploy": "wrangler publish",
 		"start": "yarn wrangler && wrangler dev",
-		"start:express": "nodemon src/express.js"
+		"start:express": "nodemon src/express.js",
+		"start:vercel": "vercel dev"
 	},
 	"lint-staged": {
 		"*": "yarn prettier"
