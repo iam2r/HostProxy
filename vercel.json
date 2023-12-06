@@ -1,18 +1,12 @@
 {
 	"rewrites": [
 		{
-			"source": "/:target(.*)",
-			"destination": "https://$1",
-			"headers": {
-				"x-vercel-protocol": "https"
-			}
+			"source": "/:target(.*)/",
+			"destination": "https://$1/"
 		},
 		{
 			"source": "/:target(.*)",
-			"destination": "http://$1",
-			"headers": {
-				"x-vercel-protocol": "http"
-			}
+			"destination": "https://$1"
 		},
 		{
 			"source": "/(.*)",
