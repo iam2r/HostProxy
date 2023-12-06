@@ -15,7 +15,7 @@
 			"destination": "https://:match/:url*/"
 		},
 		{
-			"source": "/(.*)",
+			"source": "/",
 			"destination": "/src/express.js"
 		}
 	]
