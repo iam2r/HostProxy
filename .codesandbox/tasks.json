@@ -24,6 +24,14 @@
 			"preview": {
 				"port": 8788
 			}
+		},
+		"start:vercel": {
+			"name": "start:vercel",
+			"command": "yarn start:vercel",
+			"runAtStart": true,
+			"preview": {
+				"port": 8789
+			}
 		}
 	}
 }
