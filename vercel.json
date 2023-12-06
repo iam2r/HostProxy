@@ -7,8 +7,12 @@
 	],
 	"rewrites": [
 		{
-			"source": "/:target(.*)",
-			"destination": "https://$1"
+			"source": "/:match/:url*",
+			"destination": "https://:match/:url*"
+		},
+		{
+			"source": "/:match/:url*/",
+			"destination": "https://:match/:url*/"
 		},
 		{
 			"source": "/(.*)",
